@@ -1,168 +1,218 @@
+/* ==========================================================================
+   1. FONTS & ROOT
+   ========================================================================== */
 @font-face {
   font-family: "Roboto Slab";
-  src: url("./fonts/RobotoSlab/RobotoSlab-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("./fonts/RobotoSlab/RobotoSlab-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("./fonts/RobotoSlab/RobotoSlab-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
+  src: url("./fonts/RobotoSlab/RobotoSlab-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-display: swap;
 }
 
-html {
-  font-size: 1.125rem;
-  font-family: Arial, sans-serif;
+html { 
+  font-size: 112.5%; 
+  font-family: Arial, sans-serif; 
+  box-sizing: border-box; 
+  scroll-behavior: smooth; 
 }
 
-h1, h2, h3 {
-  font-family: "Roboto Slab", Arial, sans-serif;
+*, *::before, *::after { box-sizing: inherit; }
+
+body { 
+  margin: 0; 
+  overflow-x: hidden; 
+  width: 100%;
 }
 
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
 header {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
   max-width: 68.75rem;
-  margin-inline: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-nav {
-  display: flex;
-}
+nav { display: flex; }
 
-h1 {
-  color: white;
-  font-size: 3.5em;
-}
-
-header a {
-  padding: 0 1.25rem;
+header nav a {
+  padding: 0 1rem;
   height: 3rem;
   display: flex;
   align-items: center;
+  color: #1a73e8;
+  text-decoration: none; 
+  font-size: 0.95rem;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr 64.75rem 1fr;
+header nav a:hover {
+  color: #000;
 }
 
-main > * {
-  grid-column: 2;
+header > a[href*="github.com"] {
+  padding: 0 1rem;
+  color: #1a73e8;
+  text-decoration: underline;
+  font-size: 0.95rem;
 }
 
+.disabled {
+  color: #888 !important; 
+  opacity: 0.6;
+  pointer-events: none;
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   3. HERO / SPLASH (Desktop Grid)
+   ========================================================================== */
 #splash {
+  grid-column: 1 / -1;
   height: 940px;
-  background-image: url("./angola.jpg");
-  background-size: cover;
-  background-position: bottom;
-  grid-column: 1/-1;
+  background: url("./angola.jpg") no-repeat center bottom / cover;
   display: grid;
   grid-template-columns: 1fr repeat(3, 21.58rem) 1fr;
-  text-align: center;
   align-items: center;
-  gap: 20px;
+  text-align: center;
 }
 
-h1 {
-  grid-column: 2/-2;
+#splash h1 {
+  grid-column: 2 / -2;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  font-weight: 800; 
+  font-size: 4.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
 }
 
-#buttons-textbook {
-  grid-column: 2;
-}
-
-#buttons-codebook {
-  grid-column: 3;
-}
-
-#buttons-quizbook {
-  grid-column: 4;
-}
-
+/* ==========================================================================
+   4. BUTTON CARDS (Tightened Icon & Centering)
+   ========================================================================== */
 .buttons {
-  position: relative;
+  background: white;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  background: white;
-  overflow: hidden;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  width: 100%;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 140px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0 10px;
 }
 
-.buttons > * {
-  padding: 10px 20px;
+.buttons a {
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   color: black;
   text-decoration: none;
+  font-size: 1.4rem;
+  padding: 5px 0;
 }
 
-.buttons > :first-child {
-  padding-top: 20px;
+.buttons i { 
+  margin-left: 8px; 
+  font-size: 1.25rem; 
 }
 
-.buttons:not(.mask) > :nth-last-child(2) {
-  padding-bottom: 20px;
+/* Add this below .buttons i */
+.tud-logo {
+    height: 2.8rem;    /* Since your button text is 1.4rem, 2.8rem is exactly twice the height */
+    width: auto;       /* Keeps the logo proportional */
+    margin-left: 10px; /* Space between the word "Textbook" and the logo */
 }
 
-#masks {
-  position: absolute;
+/* This ensures the larger logo doesn't touch the top/bottom of the card */
+#buttons-textbook {
+    padding: 10px 0;
 }
 
-.mask {
-  padding: 0;
+#buttons-textbook { grid-column: 2; }
+#buttons-codebook  { grid-column: 3; }
+#buttons-quizbook  { grid-column: 4; }
 
-  position: absolute;
-  background: linear-gradient(
-    125deg,
-    hsl(222deg 69% 26%) 0%,
-    hsl(217deg 67% 30%) 11%,
-    hsl(213deg 67% 34%) 22%,
-    hsl(209deg 68% 37%) 33%,
-    hsl(206deg 69% 40%) 44%,
-    hsl(203deg 71% 43%) 56%,
-    hsl(200deg 75% 46%) 67%,
-    hsl(198deg 79% 49%) 78%,
-    hsl(195deg 87% 50%) 89%,
-    hsl(193deg 100% 50%) 100%
-  );
+/* ==========================================================================
+   5. CONTENT AREA (Minimized Gaps)
+   ========================================================================== */
+main {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 68.75rem) 1fr;
 }
 
-.mask > a {
-  color: white;
+main > section {
+  grid-column: 2;
+  padding: 0 1.5rem; 
 }
 
-.mask > :last-child {
-  padding-bottom: 20px;
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 2rem 0 0.8rem 0; 
 }
 
-#buttons-textbook > .mask {
-  clip-path: url(#wave-1);
+p { 
+  margin: 0 0 1rem 0; 
+  line-height: 1.6; 
 }
 
-#buttons-codebook > .mask {
-  clip-path: url(#wave-2);
+address p { margin-bottom: 0 !important; }
+
+footer { 
+  text-align: center; 
+  padding: 3rem 0; 
+  color: #666; 
+  font-size: 0.9rem; 
 }
 
-#buttons-quizbook > .mask {
-  clip-path: url(#wave-3);
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Slimmed Mobile Buttons)
+   ========================================================================== */
+@media (max-width: 1600px) {
+  #splash {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1rem 4rem 1rem;
+  }
+  #splash h1 { font-size: 3.5rem; }
+  .buttons { width: 320px; margin: 0 auto 1.2rem auto; }
 }
 
-.wave {
-  transform: translateY(0.6px);
-}
+@media (max-width: 600px) {
+  html { font-size: 15px; } 
+  header { flex-direction: column; padding: 0.5rem; }
 
-section {
-  padding-top: 2rem;
+  /* Synced Nav Font Sizes */
+  header nav a, 
+  header > a[href*="github.com"] { 
+    height: 1.8rem; 
+    font-size: 0.8rem; 
+  }
+
+  #splash h1 { font-size: 2.3rem; }
+
+  /* SLIMMER BUTTONS FOR MOBILE */
+  .buttons { 
+    width: 90%; 
+    max-width: 300px; 
+    min-height: 90px; /* Reduced from 110px back to original slim height */
+    margin: 0 auto 1rem auto;
+  }
+
+  .buttons a {
+    font-size: 1.2rem; /* Slightly smaller text so it doesn't feel cramped */
+  }
+
+  .buttons i {
+    font-size: 1.1rem; /* Proportional icon resize */
+  }
+
+  h2 { margin: 1.5rem 0 0.5rem 0; font-size: 1.6rem; }
 }

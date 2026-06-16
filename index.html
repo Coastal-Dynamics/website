@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <title>Open Coastal Dynamics Education</title>
-    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Coastal Education</title>
     <link rel="stylesheet" href="reset.css">
-  </head>
-  <body>
-    <svg id="masks">
-      <defs>
-        <clipPath class="wave" id='wave-1' clipPathUnits='objectBoundingBox'>
-          <path class="wave" id='wave-path-1' d='M-1,2L-1,0.5Q-0.9,0.6-0.8,0.5T-0.6,0.5T-0.4,0.5T-0.2,0.5T0,0.5T0.2,0.5T0.4,0.5T0.6,0.5T0.8,0.5T1,0.5T1.2,0.5T1.4,0.5T1.6,0.5T1.8,0.5T2,0.5L2,2Z' />
-        </clipPath>
-        <clipPath class="wave" id='wave-2' clipPathUnits='objectBoundingBox'>
-          <path class="wave" id='wave-path-2' d='M-1,2L-1,0.5Q-0.9,0.6-0.8,0.5T-0.6,0.5T-0.4,0.5T-0.2,0.5T0,0.5T0.2,0.5T0.4,0.5T0.6,0.5T0.8,0.5T1,0.5T1.2,0.5T1.4,0.5T1.6,0.5T1.8,0.5T2,0.5L2,2Z' />
-        </clipPath>
-        <clipPath class="wave" id='wave-3' clipPathUnits='objectBoundingBox'>
-          <path class="wave" id='wave-path-3' d='M-1,2L-1,0.5Q-0.9,0.6-0.8,0.5T-0.6,0.5T-0.4,0.5T-0.2,0.5T0,0.5T0.2,0.5T0.4,0.5T0.6,0.5T0.8,0.5T1,0.5T1.2,0.5T1.4,0.5T1.6,0.5T1.8,0.5T2,0.5L2,2Z' />
-        </clipPath>
-      </defs>
-    </svg>
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
     <header>
-      <nav>
-        <a href="#textbook">Textbook</a>
-        <a href="#codebook">Codebook</a>
-        <a href="#quizbook">Quizbook</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="https://github.com/Coastal-Dynamics/">
-        Want to contribute? Check us out on Github!
-      </a>
+        <nav>
+            <a href="#textbook">Textbook</a>
+            <a href="#codebook">Codebook</a>
+            <a href="#quizbook">Quizbook</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="https://github.com/Coastal-Dynamics/">
+            Check us out and contribute on Github!
+        </a>
     </header>
+
     <main>
-      <div id="splash">
-        <h1>Open Coastal Dynamics Education</h1>
-        <div class="buttons" id="buttons-textbook"><a href="/textbook">Textbook</a></div>
-        <div class="buttons" id="buttons-codebook">
-          <a href="https://github.com/Coastal-Dynamics/CoastalCodebook">Codebook</a>
-          <a href="/book">Jupyter Book</a>
-          <a href="/codebook">Login with NetID</a>
+        <div id="splash">
+            <h1>Open Coastal Education</h1>
+ 	   <div class="buttons" id="buttons-textbook">
+      	      <a href="https://doi.org/10.5074/T.2021.001">
+	          Textbook 
+                   <img src="TUDelft-OPEN-Publishing_logo_zwart_trans_small.png" alt="TU Delft Open Logo" class="tud-logo">
+               </a>
+	   </div>
+            <div class="buttons" id="buttons-codebook">
+                <a href="https://github.com/Coastal-Dynamics/CoastalCodebook">Codebook <i class="fa-brands fa-github"></i></a>
+                <a href="/book" class="disabled">Jupyter Book</a>
+                <a href="/codebook">TU Delft Login</a>
+            </div>
+            <div class="buttons" id="buttons-quizbook">
+                <a href="https://github.com/Coastal-Dynamics/CoastalQuizbook" class="disabled">Quizbook <i class="fa-brands fa-github"></i></a>
+                <a href="/quizzes" class="disabled">Public Quizzes</a>
+                <a href="/quizbook">TU Delft Login</a>
+            </div>
         </div>
-        <div class="buttons" id="buttons-quizbook">
-          <a href="https://github.com/Coastal-Dynamics/CoastalQuizbook">Quizbook</a>
-          <a href="/quizzes">Public Quizzes</a>
-          <a href="/quizbook">Login with NetID</a>
-        </div>
-      </div>
-      <section id="textbook">
-        <h2>Coastal Dynamics Open Textbook</h2>
-        <p><a href="https://doi.org/10.5074/T.2021.001">The Coastal Textbook</a> is authored by Judith Bosboom, senior lecturer Coastal Engineering at the  Faculty of Civil Engineering and Geosciences, and Marcel Stive,  Emeritus Professor of Coastal Engineering. It was originally developed  as lecture notes to support and supplement a 6EC Delft University of  Technology first year Master course on Coastal Dynamics (for more background see <a>https://doi.org/10.5074/blog.20210423</a>). The textbook focuses on the interrelation between physical wave, flow and sediment transport phenomena and the resulting morphodynamics of a wide variety of coastal systems. Our list of acknowledgements is long and can be found in the textbook!</p>
-      </section>
-      <section id="codebook">
-        <h2>Coastal Dynamics Open Codebook</h2>
-        <p>The Coastal Codebook consists of a series of Jupyter notebooks,  supplementing the Coastal Textbook. The interactive exercises of the  Coastal Codebook help students interact with and reflect on the textbook material. <a href="https://www.tudelft.nl/en/open-science/projects-tu-delft/coastal-dynamics-open-codebook">The Coastal Codebook project</a> was initiated by Judith Bosboom, José Álvarez Antolínez and Floris Calkoen. Funding was provided by the TU Delft Open Stimulation Fund.  Over the years many TU Delft educators and teaching assistants (MSc and  PhD students) have contributed to the development of these notebooks:  Mario van den Berg (PhD student), Judith Bosboom (senior lecturer),  Kevin de Bruijn (MSc student and later PhD student), Floris Calkoen (Phd student), Charlie Ciaś (MSc student), Jakob Christiaanse (Phd student), Daniel Guerra Medina (MSc student), Chris Hoogervorst (MSc student),  Lisa Kleinveld (MSc student), Stuart Pearson (assistant professor), Mia  Pupić Vurilj (PhD student) and Valentijn Sessink (external open source expert).</p>
-      </section>
-      <section id="quizbook">
-        <h2>Coastal Dynamics Open Quizbook</h2>
-        <p>The Coastal Quizbook consists of Python-based weekly quizzes per  chapter of the textbook. The content is based on previous <a href="https://www.tudelft.nl/en/ceg/research/stories-of-science/there-is-no-such-thing-as-a-one-size-fits-all-approach-in-education">Möbius quizzes</a> developed for use in the TU Delft Coastal Dynamics course. <a href="https://www.tudelft.nl/en/open-science/oesf-projects-2024/the-coastal-dynamics-open-educational-suite-quiz-time">The Coastal Quizbook project</a> was co-funded by the TU Delft Open Stimulation Fund and the Faculty of  Civil Engineering and Geosciences. The project team consisted of Stuart Pearson (assistant professor and project co-lead), Judith Bosboom (senior lecturer and project co-lead) and MSc and BSc students Charlie Ciaś,  Francisco Duque de Morais Amaro and Vilohit Kaza. The teaching  assistants that contributed to the Möbius quizzes are Mario van den Berg (MSc student), Matthijs Buijs (MSc student), Anatoly Ilin (MSc  student), João Mil-Homens (PhD student) and Lodewijk de Vet (PhD  student).</p>
-      </section>
-      <section id="contact">
-        <h2>Contact</h2>
-        <a href="mailto:j.bosboom@tudelft.nl">Judith Bosboom: j.bosboom@tudelft.nl</a>
-        <a href="mailto:s.g.pearson@tudelft.nl">Stuart Pearson: s.g.pearson@tudelft.nl</a>
-      </section>
+
+        <section id="textbook">
+            <h2>Coastal Dynamics Open Textbook</h2>
+            <p><a href="https://doi.org/10.5074/T.2021.001">The Coastal Textbook</a> is authored by Judith Bosboom, senior lecturer Coastal Engineering at the Faculty of Civil Engineering and Geosciences, and Marcel Stive, Emeritus Professor of Coastal Engineering. It was originally developed as lecture notes to support and supplement a 6EC Delft University of Technology first year Master course on Coastal Dynamics (for more background see <a href="https://doi.org/10.5074/blog.20210423">this article</a>). The textbook focuses on the interrelation between physical wave, flow and sediment transport phenomena and the resulting morphodynamics of a wide variety of coastal systems. Our list of acknowledgements is long and can be found in the textbook!</p>
+        </section>
+
+        <section id="codebook">
+            <h2>Coastal Dynamics Open Codebook</h2>
+            <p>The Coastal Codebook consists of a series of Jupyter notebooks, supplementing the Coastal Textbook. The interactive exercises of the Coastal Codebook help students interact with and reflect on the textbook material. The full set of notebooks is publicly available for use on local machines, while TU Delft students can also run the notebooks through our JupyterHub. <a href="https://www.tudelft.nl/en/open-science/projects-tu-delft/coastal-dynamics-open-codebook">The Coastal Codebook project</a> was initiated by Judith Bosboom, José Álvarez Antolínez and Floris Calkoen. Funding was provided by the TU Delft Open Stimulation Fund. Over the years many TU Delft educators and teaching assistants (MSc and PhD students) have contributed to the development of these notebooks: Mario van den Berg (PhD student), Judith Bosboom (senior lecturer), Kevin de Bruijn (MSc student and later PhD student), Floris Calkoen (Phd student), Charlie Ciaś (MSc student), Jakob Christiaanse (Phd student), Daniel Guerra Medina (MSc student), Chris Hoogervorst (MSc student), Lisa Kleinveld (MSc student), Stuart Pearson (assistant professor), Mia Pupić Vurilj (PhD student) and Valentijn Sessink (external open source expert).</p>
+        </section>
+
+        <section id="quizbook">
+            <h2>Coastal Dynamics Open Quizbook</h2>
+            <p>The Coastal Quizbook is a web-based Python application consisting of weekly quizzes per chapter of the textbook. It is already available to TU Delft students, while a public version will be launched in the not too far future. The content is based on previous <a href="https://www.tudelft.nl/en/ceg/research/stories-of-science/there-is-no-such-thing-as-a-one-size-fits-all-approach-in-education">Möbius quizzes</a> developed for use in the TU Delft Coastal Dynamics course. <a href="https://www.tudelft.nl/en/open-science/oesf-projects-2024/the-coastal-dynamics-open-educational-suite-quiz-time">The Coastal Quizbook project</a> was co-funded by the TU Delft Open Stimulation Fund and the Faculty of Civil Engineering and Geosciences. The project team consisted of Stuart Pearson (assistant professor and project co-lead), Judith Bosboom (senior lecturer and project co-lead) and MSc and BSc students Charlie Ciaś, Francisco Duque de Morais Amaro and Vilohit Kaza. The teaching assistants that contributed to the Möbius quizzes are Mario van den Berg (MSc student), Matthijs Buijs (MSc student), Anatoly Ilin (MSc student), João Mil-Homens (PhD student) and Lodewijk de Vet (PhD student).</p>
+        </section>
+
+        <section id="contact" style="margin-bottom:1.5rem;">
+            <h2>Contact</h2>
+            <address>
+                <p><a href="mailto:j.bosboom@tudelft.nl">Judith Bosboom: j.bosboom@tudelft.nl</a></p>
+                <p><a href="mailto:s.g.pearson@tudelft.nl">Stuart Pearson: s.g.pearson@tudelft.nl</a></p>
+            </address>
+        </section>
     </main>
+
     <footer>
-      &copy 2025 TU Delft
+        &copy; 2025 &ndash; 2026 TU Delft
     </footer>
-  </body>
-  <script src="main.js"></script>
+</body>
 </html>
